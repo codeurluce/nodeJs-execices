@@ -3,7 +3,7 @@ const http = require('http');
 const serveur = http.createServer((requete, reponse) => {
     // Definition de l'entete 
     reponse.setHeader("content-type", "text/html");
-
+    
     // Definition de la reponse selon la demande du client
     reponse.write("<head><meta charset='utf8'><head>")
     if (requete.url === "/acceuil"){
