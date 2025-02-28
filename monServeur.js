@@ -6,10 +6,10 @@ const serveur = http.createServer((requete, reponse) => {
 
     // Definition de la reponse selon la demande du client
     reponse.write("<head><meta charset='utf8'><head>")
-    if (require.url ==="/acceuil"){
+    if (requete.url === "/acceuil"){
         reponse.write("<h1>Acceuil</h1><p>Bienvenue sur l'acceuil<p>");
     } 
-    else if (requete.url ==="/profil"){
+    else if (requete.url === "/profil"){
         reponse.write("<h1>Profil</h1><p>Bienvenue sur le profil<p>");
     }else {
         reponse.write("<h1>404 Page insdisponnible</h1><p>url incorrect<p>");
@@ -19,7 +19,6 @@ const serveur = http.createServer((requete, reponse) => {
     reponse.end();
 });
 
-serveur.listen(3000, "localhost", () => {
+serveur.listen(3001, "localhost", () => {
     console.log("pret à écouter les requêtes");
-    
 });
